@@ -1,60 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="home_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>study</title>
 </head>
+
 <body>
     <button class="tablink" onclick="openPage('Home', this, 'black')" id="defaultOpen">Home</button>
-    <button class="tablink" onclick="openPage('Gallery', this, 'black')" >Gallery</button>
+    <button class="tablink" onclick="openPage('Gallery', this, 'black')">Gallery</button>
     <button class="tablink" onclick="openPage('Quiz', this, 'black')">Quiz</button>
     <button class="tablink" onclick="openPage('About', this, 'black')">About</button>
 
     <div id="Home" class="tabcontent">
-      <h3>Home</h3>
-      <p>Welcome to studying site</p>
+        <h3>Home</h3>
+        <p>Welcome to studying site</p>
+        <a href="https://ncase.me/trust/" class="fa fa-foursquare"></a>
+        <a href="https://ncase.me/trust/" class="fa fa-stumbleupon"></a>
+        <a href="https://ncase.me/trust/" class="fa fa-flickr"></a>
+        <a href="https://ncase.me/trust/" class="fa fa-yahoo"></a>
+        <a href="https://ncase.me/trust/" class="fa fa-reddit"></a>
     </div>
 
     <div id="Gallery" class="tabcontent">
-      <h3>Gallery</h3>
-      <p>Look at all the flash cards</p>
+        <h3>Gallery</h3>
+        <p>Look at all the flash cards</p>
     </div>
 
     <div id="Quiz" class="tabcontent">
-      <h3>Quiz</h3>
-      <p>Take quizzes here</p>
+        <h3>Quiz</h3>
+        <p>Take quizzes here</p>
     </div>
 
     <div id="About" class="tabcontent">
-      <h3>About</h3>
-      <p>Who we are and what we do.</p>
+        <h3>About</h3>
+        <p>Who we are and what we do.</p>
     </div>
-    
+
     <script>
         function openPage(pageName, elmnt, color) {
-          // Hide all elements with class="tabcontent" by default */
-          var i, tabcontent, tablinks;
-          tabcontent = document.getElementsByClassName("tabcontent");
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
+            // Hide all elements with class="tabcontent" by default */
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
 
-          // Remove the background color of all tablinks/buttons
-          tablinks = document.getElementsByClassName("tablink");
-          for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].style.backgroundColor = "";
-          }
+            // Remove the background color of all tablinks/buttons
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
 
-          // Show the specific tab content
-          document.getElementById(pageName).style.display = "block";
+            // Show the specific tab content
+            document.getElementById(pageName).style.display = "block";
 
-          // Add the specific color to the button used to open the tab content
-          elmnt.style.backgroundColor = color;
+            // Add the specific color to the button used to open the tab content
+            elmnt.style.backgroundColor = color;
         }
 
         // Get the element with id="defaultOpen" and click on it
         document.getElementById("defaultOpen").click();
+
     </script>
 </body>
+
 </html>
