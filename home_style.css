@@ -1,3 +1,9 @@
+
+#Home {background-color: crimson;}
+#Gallery {background-color: coral;}
+#Flashcards {background-color: cornflowerblue;}
+#Quiz {background-color: mediumaquamarine;}
+#About {background-color: mediumpurple;}
 /* Set height of body and the document to 100% to enable "full page tabs" */
 body, html {
   height: 100%;
