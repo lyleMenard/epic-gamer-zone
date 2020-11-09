@@ -1,3 +1,8 @@
+#Home {background-color: crimson;}
+#Gallery {background-color: coral;}
+#Flashcards {background-color: cornflowerblue;}
+#Quiz {background-color: mediumaquamarine;}
+#About {background-color: mediumpurple;}
 .row {
   display: flex;
   flex-wrap: wrap;
