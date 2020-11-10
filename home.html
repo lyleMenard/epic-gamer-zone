@@ -33,48 +33,48 @@
         <h1>Hover To Reveal Name</h1>
         <div class="row">
             <div class="column">
-                <div class="container">
+                <div class="container hoverJiggle">
                     <img src="images/camel.jpg" class="image">
                     <div class="overlay">Camelus</div>
                 </div>
-                <div class="container">
+                <div class="container hoverJiggle">
                     <img src="images/pig.jpg" class="image">
                     <div class="overlay">Sus scrofa</div>
                 </div>
-                <div class="container">
+                <div class="container hoverJiggle">
                     <img src="images/chicken.jpg" class="image">
                     <div class="overlay">gallus domesticus</div>
                 </div>
             </div>
             <div class="column">
-                <div class="container">
+                <div class="container hoverJiggle">
                     <img src="images/elephant.jpg" class="image">
                     <div class="overlay">Loxodonta</div>
                 </div>
-                <div class="container">
+                <div class="container hoverJiggle">
                     <img src="images/dog.jpg" class="image">
                     <div class="overlay">Canis lupus familiaris</div>
                 </div>
-                <div class="container">
+                <div class="container hoverJiggle">
                     <img src="images/salmon.jpg" class="image">
                     <div class="overlay">Salmo salar</div>
                 </div>
             </div>
             <div class="column">
-                <div class="container">
+                <div class="container hoverJiggle">
                     <img src="images/cow.jpg" class="image">
                     <div class="overlay">Bos taurus</div>
                 </div>
 
-                <div class="container">
+                <div class="container hoverJiggle">
                     <img src="images/cat.jpg" class="image">
                     <div class="overlay">Felis catus</div>
                 </div>
-                <div class="container">
+                <div class="container hoverJiggle">
                     <img src="images/shark.jpg" class="image">
                     <div class="overlay">Selachimorpha</div>
                 </div>
-                <div class="container">
+                <div class="container hoverJiggle">
                     <img src="images/squid.jpg" class="image">
                     <div class="overlay">Teuthida</div>
                 </div>
@@ -83,7 +83,72 @@
     </div>
 
     <div id="Flashcards" class="tabcontent">
+        <div class ="slideshow-container">
+          <!-- Full-width images with number and caption text -->
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 10</div>
+            <img src="images/camel.jpg" style="width:100%">
+            <div class="text">Camelus</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 10</div>
+            <img src="images/chicken.jpg" style="width:100%">
+            <div class="text">Gallus Domesticus</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 10</div>
+            <img src="images/elephant.jpg" style="width:100%">
+            <div class="text">Loxodonta</div>
+          </div>
     
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 10</div>
+            <img src="images/dog.jpg" style="width:100%">
+            <div class="text">Canis Lupis Familiaris</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 10</div>
+            <img src="images/squid.jpg" style="width:100%">
+            <div class="text">Teuthida</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">6 / 10</div>
+            <img src="images/cat.jpg" style="width:100%">
+            <div class="text">Felus Catus</div>
+        </div>
+    
+        <div class="mySlides fade">
+            <div class="numbertext">7 / 10</div>
+            <img src="images/shark.jpg" style="width:100%">
+            <div class="text">Selachimorpha</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">8 / 10</div>
+            <img src="images/cow.jpg" style="width:100%">
+            <div class="text">Bos Taurus</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">9 / 10</div>
+            <img src="images/salmon.jpg" style="width:100%">
+            <div class="text">Salmo Salar</div>
+        </div>
+        
+        <div class="mySlides fade">
+            <div class="numbertext">10 / 10</div>
+            <img src="images/pig.jpg" style="width:100%">
+            <div class="text">Sus Scrofa</div>
+        </div>
+        <br>        
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
     </div>
     
     <div id="Quiz" class="tabcontent">
@@ -230,6 +295,35 @@
 
         // Get the element with id="defaultOpen" and click on it
         document.getElementById("defaultOpen").click();
+        
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
 
     </script>
 </body>
